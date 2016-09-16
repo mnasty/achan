@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ASCII CHAN!</title>
+  <!---link rel="stylesheet" type="text/css" href="styles.css"-->
+</head>
+
+<style type="text/css">
+/* styles.css */
+body {
+  font-family: inherit;
+  font-size: 24px;
+}
+
+.error {
+  color:red;
+}
+
+textarea {
+  width: 400px;
+  height: 200px;
+  font-family: sans-serif;
+}
+
+hr {
+  margin: 20px auto;
+}
+
+art-title {
+  font-family: inherit;
+  font-size: 21px;
+}
+
+art-body {
+  font-family: inherit;
+  font-size: 14px;
+}
+
+div {
+  font-family: fantasy;
+  font-size: 18px;
+}
+
+input[type=submit]{
+  font-size: 18px;
+}
+
+</style>
+
+<body>
+  <h1>ASCII CHAN!</h1>
+
+<form method="post">
+    <label>
+      <div>Title:</div>
+      <input type="text" name="title">
+    <label>
+
+    <label>
+      <div>Art:</div>
+      <textarea name="art"></textarea>
+    </label>
+
+    <div class="error">{{error}}</div>
+    <input type="submit" value="Post My Art!"></input>
+ </form>
+
+ <hr>
+
+ {% for art in arts %}
+  <div class="art">
+    <div class="art-title">{{art.title}}</div>
+    <pre class="art-body">{{art.art}}
+  </div>
+ {% endfor %}
+
+</body>
+</html>
